@@ -1,5 +1,13 @@
 ```
-
+@@@@@@@@@@@@@@@@@%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@%*@@@@@%*+=====+***#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@%+*=:::::--=-----====+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@%+:-=:::::---==+********+=#@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@+::::-=-::-===+**########****%@@@@@@@@@@@@@@@@@@@@@%#
+@@@@@@@@@@@@@@@%-:::::::-=--=++*****########**+=*@@@@@@@@@@@@@@@@@@#%@
+@@@@@@@@@@@@@@%-:::::::::-++++++***###########*+=+%@@@@@@@@@@@@@@%#%@@
+@@@@@@@@@@@@@@*::::::::--==++++***############**+=+%@@@@@@@@@@@%##@@@@
+@@@@@@@@@@@@@%--::---::-=++=+****##############*+=-+%@@@@@@@@@%#%@@@@@
 @@@@@@@@@@@@@+::::::::-=++**++****#############*++-:-#@@@@@@@##@@@@@@@
 @@@@@@@@@@@@@=::::.:::==++*+*==*++++**##***###**+++******#%%#@@@@@@@@@
 @@@@@@@@@@@@@-........::::::-+++#***##########%%%%%%%%%%@@@%%%@@@@@@@@
@@ -9,6 +17,26 @@
 @@@@@@@@@@@==++=+============++**#%+::+##=:-+=:=#*+*++=*##**#%@@@@@@@@
 @@@@@@@@@@@*=++===+=--=======+++*#%##*#%##%#*+=-+***#%%%%%%%%@@@@@@@@@
 @@@@@@@@@@@%==--+*++==-=====+++=-----:::::::---:::-#@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@#=+-+=++==-====++++***+--::::--+*##+-==#@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@#=++**+====+==++++**+++++===---======+%@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@%****++===++++*****+*****###*****+===#@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@%+=----===+***##****************+++%@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@#-=-----==++**###**+=----==--==+**%@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@%-==-----==++**#####*********++**%@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@%====------=++**#******##****+**%@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@#-==++==----==+*###*########***%@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@*-#*=+++===----===+*##########**%@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@#-:-#%%+++++==-=-=--===+**++++++*%@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@#-::::=@@@%#+====------====----=--*%@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@#+-::::::-+@@@@@%#+==------=====+=---::-=+*%@@@@@@@@@@@@@@@@@@
+@@@@#*=-::::::::::-+@@@@@%*+-:-----====--::::::::::::-=+*#%@@@@@@@@@@@
+#+-::::::::::::::::-+@@@@#-:::::------:::::::::::::::::::::--+#%%@@@@@
+::::::::::::--:::::::=%@@%=:::::::-=-:::=**++-::::::::::::--------=+#%
+--::::::::::-:::::::::=%@%*=+-:-=-=#*-----::::::-:--------------------
+--::::--::::--:::-:::::=#%+:::::::-=-::::::::::::::::----------------=
+-::------:::------::::::-#+.::::=####*+=::::::::::--:----------------=
+--::-----:::-----::::::::-=:::=#%@@@@%%%%%%#+-:::::--::-::----------==
+---::--:---:---::--::::::-+###%@@@@@@@@@@@@@%+------------:---------=-
 
                         T E C T O N I C A
 
@@ -17,8 +45,9 @@
            { p r o t o c e l l : l a b s }  |  2 0 2 4
 ```
 
-Seed explorer for T E C T O N I C A collection on [fxhash.xyz](https://www.fxhash.xyz/) generative art platform. This is a standalone app to explore unique minting seeds available to each minter. TECTONICA uses params mechanic to allow minters to customize their mints by choosing from one of the 1000 available seed numbers. Use this explorer as a visual guide and to filter the seeds by features. Note that you can also mint triptych pieces by selecting the triptych part from the params menu during minting. Triptych pieces for the same seed number have the same features, so they are not included in this explorer. 
+Seed explorer for T E C T O N I C A collection on [fxhash.xyz](https://www.fxhash.xyz/) generative art platform. This is a standalone app to explore unique minting seeds available to each minter. TECTONICA uses params mechanic to allow minters to customize their mints by choosing from one of the 1000 available seed numbers. Use this explorer as a visual guide and to filter the seeds by features. Note that you can also mint triptych pieces by selecting the triptych part from the params menu during minting. Triptych pieces for the same seed number have the same features, so they are not included in this explorer.
 
+NOTE: Occasionally, **seed thumbnails are not generated** when the app starts, showing a blank grid. Restarting the app should fix the issue.
 
 # Instructions
 
@@ -31,10 +60,6 @@ Seed explorer for T E C T O N I C A collection on [fxhash.xyz](https://www.fxhas
 4. **Explore your seeds** using filters (on the bottom of the screen) and hovering with the mouse over them to reveal the token features. You can expand and slide the grid with -+ <> icons. Expand the examples for each feature by hovering over its name on the filter menu. Examples are pregenerated and used as a preview of features, they don’t correspond directly to the seeds show on the grid.
 
 5. When minting from T E C T O N I C A collection, make sure to **connect with the same wallet address and select the corresponding seed number to get the same features**. Seed explorer is showing only diagrammatic thumbnails for every seed, not the actual art piece.
-
-
-
-
 
 
 
