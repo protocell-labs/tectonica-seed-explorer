@@ -106,7 +106,7 @@ positions_grid = calculate_random_grid_flat(grid_nr_x, grid_nr_y);
 
 function preload() {
   
-  MonoMEK = loadFont('MEK-Mono.otf');
+  MonoMEK = loadFont('libs/MEK-Mono.otf');
   
   preload_examples();
   
