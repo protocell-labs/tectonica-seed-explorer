@@ -62,5 +62,8 @@ NOTE: Occasionally, **seed thumbnails are not generated** when the app starts, s
 5. When minting from T E C T O N I C A collection, make sure to **connect with the same wallet address and select the corresponding seed number to get the same features**. Seed explorer is showing only diagrammatic thumbnails for every seed, not the actual art piece.
 
 
+## Attribution
 
-Created in 2024 by {protocell:labs}. You can find us on X / Twitter - @LukaPiskorec @00000Kane00000
+Created in 2024 by {protocell:labs}. You can find us on X / Twitter - [@LukaPiskorec](https://twitter.com/LukaPiskorec) [@00000Kane00000](https://twitter.com/00000Kane00000)
+
+This app uses p5.js, seedrandom, perlin-noise and MonoMEK font (full license and links in LICENSE file).

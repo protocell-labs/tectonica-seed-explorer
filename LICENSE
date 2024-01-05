@@ -19,3 +19,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Attribution of dependencies
+
+
+p5.js for drawing to HTML5 canvas and animations.
+Downloaded from: https://github.com/processing/p5.js
+This code is provided under LGPL-2.1 license
+Copyright (c) 2023 p5.js authors.
+
+seedrandom for creating seeded PRNGs.
+Downloaded from: https://github.com/davidbau/seedrandom
+This code is provided under MIT License.
+Copyright (c) 2019 David Bau.
+
+Perlin noise implementation from Leonardo de S.L.F
+Downloaded from: https://github.com/leodeslf/perlin-noise
+This code is provided under MIT License.
+Copyright (c) 2022 Leonardo de S.L.F
+
+MonoMEK v1.1 font from Michael Alexander (MEK.txt)
+Downloaded from: https://drive.google.com/drive/folders/1S-lXxBjKl7nBsqvDm215pG6XBLbgx-vx
+This code is provided under CC0 license.
+Copyright (c) 2023 Michael Alexander (MEK.txt)
