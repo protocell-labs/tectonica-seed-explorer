@@ -120,7 +120,7 @@ function setup() {
   
   // seed input screen
   
-  seed_input = createInput('paste a valid Ethereum address');
+  seed_input = createInput('paste a full Tezos address');
   seed_input.input(field_typing); // callback for when something is being entered
   input_field_created = true; // so we don't get an error while resizing the screen during loading
   

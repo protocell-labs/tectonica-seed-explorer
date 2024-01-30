@@ -1139,14 +1139,17 @@ function seed_input_screen() {
   
   
   // validation sign
-  
-  textSize(seed_text_size * 2);
-  
+
   if (address_valid == true) {
+    textFont('Courier New');
+    textSize(seed_text_size * 1.5);
     fill(0, 255, 0); // green
-    text("Ξ", windowWidth / 2 - seed_input.width / 2 - 25, windowHeight / 2 + seed_input.height / 2 - 7);
+    // Ξ for Ethereum, ꜩ for Tezos
+    text("ꜩ", windowWidth / 2 - seed_input.width / 2 - 25, windowHeight / 2 + seed_input.height / 2 - 7);
     
   } else {
+    textFont(MonoMEK);
+    textSize(seed_text_size * 2);
     fill(255, 0, 0); // red
     text("X", windowWidth / 2 - seed_input.width / 2 - 25, windowHeight / 2 + seed_input.height / 2 - 7);
     
@@ -1162,7 +1165,7 @@ function seed_input_screen() {
 
 function field_typing() {
   temp_input = this.value();
-  address_valid = validate_address(temp_input)
+  address_valid = validate_tez_address(temp_input)
   
 }
 
@@ -1171,10 +1174,15 @@ function field_typing() {
 
 // quick plausibility test for ETH addresses (doesn't check the checksum)
 // from: https://ethereum.stackexchange.com/questions/1374/how-can-i-check-if-an-ethereum-address-is-valid
-function validate_address(address) {
+function validate_eth_address(address) {
   return (/^(0x){1}[0-9a-fA-F]{40}$/i.test(address));
 }
 
+// quick plausibility test for XTZ addresses (doesn't check the checksum)
+//from: https://tezos.stackexchange.com/questions/4290/what-are-the-recommended-regular-expressions-for-tezos-wallet-and-contract-addre
+function validate_tez_address(address) {
+  return (/^tz[1-3][1-9A-HJ-NP-Za-km-z]{33}$/i.test(address));
+}
 
 
 
@@ -1285,7 +1293,7 @@ function mouseClicked() {
   
   // pattern button
   
-  if ((mouseX < windowWidth / 2 - 3 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 - 3 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2)) {
+  if ((mouseX < windowWidth / 2 - 3 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 - 3 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2) && (input_screen == false)) {
     
     pattern_idx = (pattern_idx + 1) % patterns.length; // cycle through the list
     apply_seed_filtering();
@@ -1299,7 +1307,7 @@ function mouseClicked() {
   
   // pigments button
   
-  if ((mouseX < windowWidth / 2 - 2 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 - 2 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 2 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 2 * offset_bottom / 4 - button_height / 2)) {
+  if ((mouseX < windowWidth / 2 - 2 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 - 2 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 2 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 2 * offset_bottom / 4 - button_height / 2) && (input_screen == false)) {
     
     pigments_idx = (pigments_idx + 1) % pigments.length; // cycle through the list
     apply_seed_filtering();
@@ -1312,7 +1320,7 @@ function mouseClicked() {
   
   // dimension button
   
-  if ((mouseX < windowWidth / 2 - next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 - next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2)) {
+  if ((mouseX < windowWidth / 2 - next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 - next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2) && (input_screen == false)) {
     
     dimension_idx = (dimension_idx + 1) % dimensions.length; // cycle through the list
     apply_seed_filtering();
@@ -1325,7 +1333,7 @@ function mouseClicked() {
   
   // structure button
   
-  if ((mouseX < windowWidth / 2 + button_width / 2) && (mouseX > windowWidth / 2 - button_width / 2) && (mouseY < windowHeight - 2 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 2 * offset_bottom / 4 - button_height / 2)) {
+  if ((mouseX < windowWidth / 2 + button_width / 2) && (mouseX > windowWidth / 2 - button_width / 2) && (mouseY < windowHeight - 2 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 2 * offset_bottom / 4 - button_height / 2) && (input_screen == false)) {
     
     structure_idx = (structure_idx + 1) % structures.length; // cycle through the list
     apply_seed_filtering();
@@ -1338,7 +1346,7 @@ function mouseClicked() {
   
   // form button
   
-  if ((mouseX < windowWidth / 2 + next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 + next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2)) {
+  if ((mouseX < windowWidth / 2 + next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 + next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2) && (input_screen == false)) {
     
     form_idx = (form_idx + 1) % forms.length; // cycle through the list
     apply_seed_filtering();
@@ -1351,7 +1359,7 @@ function mouseClicked() {
   
   // dissipation button
   
-  if ((mouseX < windowWidth / 2 + 2 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 + 2 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 2 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 2 * offset_bottom / 4 - button_height / 2)) {
+  if ((mouseX < windowWidth / 2 + 2 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 + 2 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 2 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 2 * offset_bottom / 4 - button_height / 2) && (input_screen == false)) {
     
     dissipation_idx = (dissipation_idx + 1) % dissipations.length; // cycle through the list
     apply_seed_filtering();
@@ -1364,7 +1372,7 @@ function mouseClicked() {
   
   // attachment button
   
-  if ((mouseX < windowWidth / 2 + 3 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 + 3 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2)) {
+  if ((mouseX < windowWidth / 2 + 3 * next_button_offset + button_width / 2) && (mouseX > windowWidth / 2 + 3 * next_button_offset - button_width / 2) && (mouseY < windowHeight - 4 * offset_bottom / 4 + button_height / 2) && (mouseY > windowHeight - 4 * offset_bottom / 4 - button_height / 2) && (input_screen == false)) {
     
     attachment_idx = (attachment_idx + 1) % attachments.length; // cycle through the list
     apply_seed_filtering();
@@ -1389,7 +1397,7 @@ function mouseClicked() {
   
   // left arrow button
   
-  if ((grid_shift > 0) && (mouseX > offset_bottom / 2 - seed_text_size / 2) && (mouseX < offset_bottom / 2 + seed_text_size / 2) && (mouseY > windowHeight / 2 + seed_text_size * 0.8 - 2.5 * seed_text_size / 2) && (mouseY < windowHeight / 2 + seed_text_size * 0.8 + 2.5 * seed_text_size / 2)) {
+  if ((grid_shift > 0) && (mouseX > offset_bottom / 2 - seed_text_size / 2) && (mouseX < offset_bottom / 2 + seed_text_size / 2) && (mouseY > windowHeight / 2 + seed_text_size * 0.8 - 2.5 * seed_text_size / 2) && (mouseY < windowHeight / 2 + seed_text_size * 0.8 + 2.5 * seed_text_size / 2) && (input_screen == false)) {
     
     grid_shift -= 1;
     grid_shift = constrain(grid_shift, 0, Math.floor(nr_of_seeds / (grid_nr_x * grid_nr_y)));
@@ -1402,7 +1410,7 @@ function mouseClicked() {
   
   // right arrow button
   
-  if ((grid_shift < Math.floor(nr_of_seeds / (grid_nr_x * grid_nr_y))) && (mouseX > windowWidth -  offset_bottom / 2 - seed_text_size / 2) && (mouseX < windowWidth - offset_bottom / 2 + seed_text_size / 2) && (mouseY > windowHeight / 2 + seed_text_size * 0.8 - 2.5 * seed_text_size / 2) && (mouseY < windowHeight / 2 + seed_text_size * 0.8 + 2.5 * seed_text_size / 2)) {
+  if ((grid_shift < Math.floor(nr_of_seeds / (grid_nr_x * grid_nr_y))) && (mouseX > windowWidth -  offset_bottom / 2 - seed_text_size / 2) && (mouseX < windowWidth - offset_bottom / 2 + seed_text_size / 2) && (mouseY > windowHeight / 2 + seed_text_size * 0.8 - 2.5 * seed_text_size / 2) && (mouseY < windowHeight / 2 + seed_text_size * 0.8 + 2.5 * seed_text_size / 2) && (input_screen == false)) {
     
     grid_shift += 1;
     grid_shift = constrain(grid_shift, 0, Math.floor(nr_of_seeds / (grid_nr_x * grid_nr_y)));
@@ -1417,7 +1425,7 @@ function mouseClicked() {
   
   var grid_idx_1 = grid_nr_y * Math.floor(grid_nr_x / 2) - 1; // grid bottom middle
   
-  if ((mouseX > windowWidth / 2 - grid_cell_size_x - seed_text_size) && (mouseX < windowWidth / 2 - grid_cell_size_x + seed_text_size) && (mouseY > positions_grid[grid_idx_1][1] + grid_cell_size_y - seed_text_size) && (mouseY < positions_grid[grid_idx_1][1] + grid_cell_size_y + seed_text_size)) {
+  if ((mouseX > windowWidth / 2 - grid_cell_size_x - seed_text_size) && (mouseX < windowWidth / 2 - grid_cell_size_x + seed_text_size) && (mouseY > positions_grid[grid_idx_1][1] + grid_cell_size_y - seed_text_size) && (mouseY < positions_grid[grid_idx_1][1] + grid_cell_size_y + seed_text_size) && (input_screen == false)) {
     
     nr_of_thumbnails -= 50;
 
@@ -1432,7 +1440,7 @@ function mouseClicked() {
   
   var grid_idx_2 = grid_nr_y * (Math.floor(grid_nr_x / 2) + 1) - 1; // grid bottom middle
   
-  if ((mouseX > windowWidth / 2 + grid_cell_size_x - seed_text_size) && (mouseX < windowWidth / 2 + grid_cell_size_x + seed_text_size) && (mouseY > positions_grid[grid_idx_2][1] + grid_cell_size_y - seed_text_size) && (mouseY < positions_grid[grid_idx_2][1] + grid_cell_size_y + seed_text_size)) {
+  if ((mouseX > windowWidth / 2 + grid_cell_size_x - seed_text_size) && (mouseX < windowWidth / 2 + grid_cell_size_x + seed_text_size) && (mouseY > positions_grid[grid_idx_2][1] + grid_cell_size_y - seed_text_size) && (mouseY < positions_grid[grid_idx_2][1] + grid_cell_size_y + seed_text_size) && (input_screen == false)) {
     
     nr_of_thumbnails += 50;
 

@@ -53,7 +53,7 @@ NOTE: Occasionally, **seed thumbnails are not generated** when the app starts, s
 
 1. **Run the seed explorer from here** -> [T E C T O N I C A seed explorer](https://protocell-labs.github.io/tectonica-seed-explorer/)
 
-2. **Paste a valid Ethereum address into the input field**. This will determine the PRNG seed for that address during the minting process. No need to connect a wallet, which makes the explorer totally safe to use.
+2. **Paste a full Tezos address into the input field (no domain names)**. This will determine the PRNG seed for that address during the minting process. No need to connect a wallet, which makes the explorer totally safe to use.
 
 3. **Press Generate Seeds**. This will create 1000 seed numbers unique for that address. Make sure you connect with the same wallet address later when minting the token from the collection.
 
