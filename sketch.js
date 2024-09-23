@@ -101,6 +101,10 @@ var generate_seeds_now = false;
 positions_grid = calculate_random_grid_flat(grid_nr_x, grid_nr_y);
 
 
+// get URL search params - add this to the URL => ?tez_wallet=tz1Lkgy2gYECvVK55yyiwjbSSZeUoQp8Azxo
+const urlSearchParams = new URLSearchParams(window.location.search);
+const urlParams = Object.fromEntries(urlSearchParams.entries());
+const tez_wallet = urlParams['tez_wallet'];
 
 
 
@@ -129,6 +133,15 @@ function setup() {
   seed_input.size(seed_input_w, seed_input_h);
   seed_input.position(windowWidth / 2 - seed_input.width / 2, windowHeight / 2);
   
+  // if tez_wallet is already defined trhough URL search params, then skip the intro screen
+  if (tez_wallet != undefined) {
+    input_screen = false;
+    seed_input.hide();
+    minter = tez_wallet;
+    generate_seeds_now = true;
+    background(0);
+  }
+
 }
 
 
